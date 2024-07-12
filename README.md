@@ -3,8 +3,8 @@
 To follow this workshop there are a few requirements :
 
 - A github account
-- Go v1.22.X
-- Node >= 18
+- [Go v1.22.X](https://go.dev/doc/install)
+- [Node >= 18](https://nodejs.org/en/download/package-manager)
 - Some Go and Solidity knowledge
 
 ## Creating an NG Account
