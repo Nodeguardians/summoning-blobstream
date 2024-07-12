@@ -1,0 +1,248 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IObservatory",
+  "sourceName": "contracts_/interfaces/IObservatory.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "isProven",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes[]",
+              "name": "data",
+              "type": "bytes[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "beginKey",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "endKey",
+                  "type": "uint256"
+                },
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "internalType": "bytes1",
+                          "name": "version",
+                          "type": "bytes1"
+                        },
+                        {
+                          "internalType": "bytes28",
+                          "name": "id",
+                          "type": "bytes28"
+                        }
+                      ],
+                      "internalType": "struct Namespace",
+                      "name": "min",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "bytes1",
+                          "name": "version",
+                          "type": "bytes1"
+                        },
+                        {
+                          "internalType": "bytes28",
+                          "name": "id",
+                          "type": "bytes28"
+                        }
+                      ],
+                      "internalType": "struct Namespace",
+                      "name": "max",
+                      "type": "tuple"
+                    },
+                    {
+                      "internalType": "bytes32",
+                      "name": "digest",
+                      "type": "bytes32"
+                    }
+                  ],
+                  "internalType": "struct NamespaceNode[]",
+                  "name": "sideNodes",
+                  "type": "tuple[]"
+                }
+              ],
+              "internalType": "struct NamespaceMerkleMultiproof[]",
+              "name": "shareProofs",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes1",
+                  "name": "version",
+                  "type": "bytes1"
+                },
+                {
+                  "internalType": "bytes28",
+                  "name": "id",
+                  "type": "bytes28"
+                }
+              ],
+              "internalType": "struct Namespace",
+              "name": "namespace",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "bytes1",
+                      "name": "version",
+                      "type": "bytes1"
+                    },
+                    {
+                      "internalType": "bytes28",
+                      "name": "id",
+                      "type": "bytes28"
+                    }
+                  ],
+                  "internalType": "struct Namespace",
+                  "name": "min",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "bytes1",
+                      "name": "version",
+                      "type": "bytes1"
+                    },
+                    {
+                      "internalType": "bytes28",
+                      "name": "id",
+                      "type": "bytes28"
+                    }
+                  ],
+                  "internalType": "struct Namespace",
+                  "name": "max",
+                  "type": "tuple"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "digest",
+                  "type": "bytes32"
+                }
+              ],
+              "internalType": "struct NamespaceNode[]",
+              "name": "rowRoots",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes32[]",
+                  "name": "sideNodes",
+                  "type": "bytes32[]"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "key",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "numLeaves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct BinaryMerkleProof[]",
+              "name": "rowProofs",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "tupleRootNonce",
+                  "type": "uint256"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "height",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bytes32",
+                      "name": "dataRoot",
+                      "type": "bytes32"
+                    }
+                  ],
+                  "internalType": "struct DataRootTuple",
+                  "name": "tuple",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "bytes32[]",
+                      "name": "sideNodes",
+                      "type": "bytes32[]"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "key",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "numLeaves",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct BinaryMerkleProof",
+                  "name": "proof",
+                  "type": "tuple"
+                }
+              ],
+              "internalType": "struct AttestationProof",
+              "name": "attestationProof",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SharesProof",
+          "name": "_proof",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_root",
+          "type": "bytes32"
+        }
+      ],
+      "name": "proveComet",
+      "outputs": [],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
