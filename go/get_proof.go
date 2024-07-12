@@ -198,7 +198,7 @@ func printProofs(
 		"0x" + hex.EncodeToString(blockDataRoot.Bytes()),
 	)
 
-	f, err := os.Create("data/proof.json")
+	f, err := os.Create("../data/proof.json")
 	if err != nil {
 		fmt.Println(err)
 		return

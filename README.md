@@ -38,13 +38,8 @@ Everything should be pre-configured, you simply need to run :
 ```sh
 cd go
 go get
+go run get_proof.go utils.go
 cd ..
-```
-
-Followed by :
-
-```sh
-go run code/get_proof.go code/utils.go
 ```
 
 And you should see the output listing the following :
@@ -55,6 +50,8 @@ And you should see the output listing the following :
 - RowRoots
 - RowProofs
 - AttestationProofs
+
+Everything is saved to a file at `data/proof.json` for later.
 
 ## Sending the proof to the blobstream contract
 
