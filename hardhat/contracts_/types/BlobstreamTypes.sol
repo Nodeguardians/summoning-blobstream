@@ -9,74 +9,74 @@ struct DataRootTuple {
     // Celestia block height the data root was included in.
     // Genesis block is height = 0.
     // First queryable block is height = 1.
-    uint256 height;
+    uint256 Height;
     // Data root.
-    bytes32 dataRoot;
+    bytes32 DataRoot;
 }
 
 /// @notice Merkle Tree Proof structure.
 struct BinaryMerkleProof {
     // List of side nodes to verify and calculate tree.
-    bytes32[] sideNodes;
+    bytes32[] SideNodes;
     // The key of the leaf to verify.
-    uint256 key;
+    uint256 Key;
     // The number of leaves in the tree
-    uint256 numLeaves;
+    uint256 NumLeaves;
 }
 
 /// @notice A representation of the Celestia-app namespace ID and its version.
 /// See: https://celestiaorg.github.io/celestia-app/specs/namespace.html
 struct Namespace {
     // The namespace version.
-    bytes1 version;
+    bytes1 Version;
     // The namespace ID.
-    bytes28 id;
+    bytes28 Id;
 }
 
 /// @notice Namespace Merkle Tree node.
 struct NamespaceNode {
     // Minimum namespace.
-    Namespace min;
+    Namespace Min;
     // Maximum namespace.
-    Namespace max;
+    Namespace Max;
     // Node value.
-    bytes32 digest;
+    bytes32 Digest;
 }
 
 /// @notice Namespace Merkle Tree Multiproof structure. Proves multiple leaves.
 struct NamespaceMerkleMultiproof {
     // The beginning key of the leaves to verify.
-    uint256 beginKey;
+    uint256 BeginKey;
     // The ending key of the leaves to verify.
-    uint256 endKey;
+    uint256 EndKey;
     // List of side nodes to verify and calculate tree.
-    NamespaceNode[] sideNodes;
+    NamespaceNode[] SideNodes;
 }
 
 /// @notice Contains the necessary parameters needed to verify that a data root tuple
 /// was committed to, by the Blobstream smart contract, at some specif nonce.
 struct AttestationProof {
     // the attestation nonce that commits to the data root tuple.
-    uint256 tupleRootNonce;
+    uint256 TupleRootNonce;
     // the data root tuple that was committed to.
-    DataRootTuple tuple;
+    DataRootTuple Tuple;
     // the binary merkle proof of the tuple to the commitment.
-    BinaryMerkleProof proof;
+    BinaryMerkleProof Proof;
 }
 
 /// @notice Contains the necessary parameters to prove that some shares, which were posted to
 /// the Celestia network, were committed to by the Blobstream smart contract.
 struct SharesProof {
     // The shares that were committed to.
-    bytes[] data;
+    bytes[] Data;
     // The shares proof to the row roots. If the shares span multiple rows, we will have multiple nmt proofs.
-    NamespaceMerkleMultiproof[] shareProofs;
+    NamespaceMerkleMultiproof[] ShareProofs;
     // The namespace of the shares.
-    Namespace namespace;
+    Namespace Namespace;
     // The rows where the shares belong. If the shares span multiple rows, we will have multiple rows.
-    NamespaceNode[] rowRoots;
+    NamespaceNode[] RowRoots;
     // The proofs of the rowRoots to the data root.
-    BinaryMerkleProof[] rowProofs;
+    BinaryMerkleProof[] RowProofs;
     // The proof of the data root tuple to the data root tuple root that was posted to the Blobstream contract.
-    AttestationProof attestationProof;
+    AttestationProof AttestationProof;
 }

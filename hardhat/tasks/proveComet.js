@@ -7,16 +7,16 @@ task(
   .setAction(async (taskArgs) => {
     const { observatory, path } = taskArgs;
 
-    const proof = require(path);
+    let proof = require(path);
     const observatoryContract = await ethers.getContractAt(
       "IObservatory",
       observatory
     );
 
-    const tx = await observatoryContract.proveComet(proof, "0x00");
-    await tx.wait();
+    const receipt = await observatoryContract.proveComet(proof);
+    await receipt.wait();
 
-    const proven = await observatory.isProven();
+    const proven = await observatoryContract.isProven();
 
     if (proven) {
       console.log("Comet is proven!");
